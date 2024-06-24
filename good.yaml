@@ -1,86 +1,574 @@
 dorks:
-  - heading: Broad domain search w/ negative search
-    category: Web Server Detection
-    dork: "site:example.com -www -shop -share -ir -mfa"
-
-  - heading: PHP extension w/ parameters
-    category: Footholds
-    dork: "site:example.com ext:php inurl:?"
-
-  - heading: API Endpoints
-    category: API
-    dork: "site:example[.]com inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3"
-
-  - heading: Juicy Extensions
-    category: Juicy Info
+  - heading: "Sensitive Configuration Files"
+    category: "Sensitive Files"
     dork: >
-      site:"example[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini |
-      ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ |
-      ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:json
+      site:<domain> ext:log | ext:txt | ext:conf | ext:cnf | ext:ini |
+      ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old |
+      ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:json
 
-  - heading: High % inurl keywords
-    category: Vulnerable Servers
-    dork: "inurl:conf | inurl:env | inurl:cgi | inurl:bin | inurl:etc | inurl:root | inurl:sql | inurl:backup | inurl:admin | inurl:php site:example[.]com"
+  - heading: "Public Repositories"
+    category: "Files Containing Usernames"
+    dork: 'site:github.com | site:gitlab.com "<domain>"'
 
-  - heading: Server Errors
-    category: Errors
-    dork: "inurl:\"error\" | intitle:\"exception\" | intitle:\"failure\" | intitle:\"server at\" | inurl:exception | \"database error\" | \"SQL syntax\" | \"undefined index\" | \"unhandled exception\" | \"stack trace\" site:example[.]com"
+  - heading: "API Keys"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "api_key" | "apiKey" | "api-key" | "apikey" ext:json | ext:yaml | ext:env'
 
-  - heading: XSS prone parameters
-    category: Advisories and Vulnerabilities
-    dork: "inurl:q= | inurl:s= | inurl:search= | inurl:query= | inurl:keyword= | inurl:lang= inurl:& site:example.com"
+  - heading: "AWS Credentials"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "AWS_ACCESS_KEY_ID" | "AWS_SECRET_ACCESS_KEY" ext:log | ext:txt | ext:conf | ext:json | ext:env'
 
-  - heading: Open Redirect prone parameters
-    category: Advisories and Vulnerabilities
-    dork: "inurl:url= | inurl:return= | inurl:next= | inurl:redirect= | inurl:redir= | inurl:ret= | inurl:r2= | inurl:page= inurl:& inurl:http site:example.com"
+  - heading: "Database Credentials"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "DB_USERNAME" | "DB_PASSWORD" ext:env | ext:conf | ext:cnf'
 
-  - heading: SQLi Prone Parameters
-    category: Advisories and Vulnerabilities
-    dork: "inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:example.com"
+  - heading: "Error Logs"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "error.log" | "access.log"'
 
-  - heading: SSRF Prone Parameters
-    category: Advisories and Vulnerabilities
-    dork: "inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com"
+  - heading: "Backup Files"
+    category: "Sensitive Files"
+    dork: 'site:<domain> ext:bak | ext:backup | ext:old | ext:~'
 
-  - heading: LFI Prone Parameters
-    category: Advisories and Vulnerabilities
-    dork: "inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:example.com"
+  - heading: "Docker Compose Files"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "docker-compose" ext:yaml | ext:yml'
 
-  - heading: RCE Prone Parameters
-    category: Advisories and Vulnerabilities
-    dork: "inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com"
+  - heading: "Kubernetes Configurations"
+    category: "Sensitive Files"
+    dork: 'site:<domain> ext:yaml | ext:yml "k8s" | "kubernetes"'
 
-  - heading: File upload endpoints
-    category: Vulnerable Files
-    dork: "site:example.com ”choose file”"
+  - heading: "SSH Keys"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "id_rsa" | "id_dsa" | "ssh_host_rsa_key"'
 
-  - heading: API Docs
-    category: Documentation
-    dork: "inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:\"example[.]com\""
+  - heading: "Public Google Drive Files"
+    category: "Sensitive Files"
+    dork: 'site:drive.google.com "<domain>"'
 
-  - heading: Login Pages
-    category: Authentication
-    dork: "inurl:login | inurl:signin | intitle:login | intitle:signin | inurl:secure site:example[.]com"
+  - heading: "Public Dropbox Links"
+    category: "Sensitive Files"
+    dork: 'site:dropbox.com "<domain>"'
 
-  - heading: Sensitive Documents
-    category: Sensitive Files
-    dork: >
-      site:example.com ext:txt | ext:pdf | ext:xml | ext:xls | ext:xlsx | ext:ppt |
-      ext:pptx | ext:doc | ext:docx intext:“confidential” | intext:“Not for Public Release” |
-      intext:”internal use only” | intext:“do not distribute”
+  - heading: "Environment Variables"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "ENV" | "environment" ext:env | ext:json | ext:yaml'
 
-  - heading: Sensitive Parameters
-    category: Sensitive Files
-    dork: "inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com"
+  - heading: "Azure Credentials"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "azure" "client_id" | "client_secret" ext:env | ext:json | ext:yaml'
 
-  - heading: Adobe Experience Manager (AEM)
-    category: CMS
-    dork: >
-      inurl:/content/usergenerated |
-      inurl:/content/dam |
-      inurl:/jcr:content |
-      inurl:/libs/granite |
-      inurl:/etc/clientlibs |
-      inurl:/content/geometrixx |
-      inurl:/bin/wcm |
-      inurl:/crx/de site:example[.]com
+  - heading: "Firebase Databases"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "firebaseio.com"'
+
+  - heading: "Public Slack Channels"
+    category: "Sensitive Files"
+    dork: 'site:slack.com "<domain>"'
+
+  - heading: "Terraform Configurations"
+    category: "Sensitive Files"
+    dork: 'site:<domain> ext:tf | ext:tfstate'
+
+  - heading: "CI/CD Pipelines"
+    category: "Sensitive Files"
+    dork: 'site:<domain> "pipeline" ext:yaml | ext:yml | ext:json'
+
+  - heading: "Public Notion Pages"
+    category: "Sensitive Files"
+    dork: 'site:notion.so "<domain>"'
+
+  - heading: "Sensitive Excel Files"
+    category: "Sensitive Files"
+    dork: 'site:<domain> ext:xls | ext:xlsx'
+
+  - heading: "Jira Boards"
+    category: "Sensitive Files"
+    dork: 'site:atlassian.net "<domain>"'
+
+  - heading: "Zoom Meeting Links"
+    category: "Sensitive Files"
+    dork: 'site:zoom.us "<domain>"'
+
+  - heading: "Google Docs"
+    category: "Sensitive Files"
+    dork: 'site:docs.google.com "<domain>"'
+
+  - heading: "Vulnerable Servers - FileCatalyst"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"FileCatalyst file transfer solution"'
+
+  - heading: "Vulnerable Servers - ITRS OP5 Monitor"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> allintitle:"ITRS OP5 Monitor"'
+
+  - heading: "Vulnerable Servers - Web Access"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:"wa.exe?TICKET"'
+
+  - heading: "Vulnerable Servers - XAMPP Dashboards"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"XAMPP Dashboard"'
+
+  - heading: "Vulnerable Servers - PMB"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> "PMB" AND ("changelog.txt" OR inurl:opac_css)'
+
+  - heading: "Vulnerable Servers - Bright Cluster Manager"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> allintitle:"Bright Cluster Manager" site:.edu'
+
+  - heading: "Vulnerable Servers - iTop"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Welcome to iTop version" wizard'
+
+  - heading: "Vulnerable Servers - PowerCMS"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Installation Wizard - PowerCMS v2"'
+
+  - heading: "Vulnerable Servers - OpenVPN"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"OpenVpn Status Monitor"'
+
+  - heading: "Vulnerable Servers - Apache Struts"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> "Apache Struts 2.x Path Traversal Vulnerability (CVE-2023-50164)"'
+
+  - heading: "Vulnerable Servers - Froxlor"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:install.php intitle:"Froxlor Server Management Panel - Installation"'
+
+  - heading: "Vulnerable Servers - GeoServer"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:"/geoserver/ows?service=wfs"'
+
+  - heading: "Vulnerable Servers - HFS"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"HFS" AND intext:"httpfileserver 2.3" AND -intext:"remote"'
+
+  - heading: "Vulnerable Servers - Login Page Backup"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:adm/login.jsp.bak'
+
+  - heading: "Vulnerable Servers - TileServer"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"TileServer GL - Server for vector and raster maps with GL styles"'
+
+  - heading: "Vulnerable Servers - Password Views"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "/views/auth/passwords"'
+
+  - heading: "Vulnerable Servers - Icecast"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Icecast Streaming Media Server" "Icecast2 Status" -.com'
+
+  - heading: "Vulnerable Servers - Editor Upload Test"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:/editor/filemanager/connectors/uploadtest.html'
+
+  - heading: "Vulnerable Servers - Orion Core"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intext:"user name" intext:"orion core" -solarwinds.com'
+
+  - heading: "Vulnerable Servers - Popup Upload"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:RichWidgets/Popup_Upload.aspx'
+
+  - heading: "Vulnerable Servers - Vulnerability Report"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Vulnerability Report" "Critical" ext:pdf'
+
+  - heading: "Vulnerable Servers - Wing FTP"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Wing FTP Server - Web"'
+
+  - heading: "Vulnerable Servers - Gila CMS"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intext:"Powered By Gila CMS"'
+
+  - heading: "Vulnerable Servers - FileMail"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "filemail.pl"'
+
+  - heading: "Vulnerable Servers - Shell"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "shell"'
+
+  - heading: "Vulnerable Servers - FTP"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "ftp"'
+
+  - heading: "Vulnerable Servers - Web Config"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "web.config"'
+
+  - heading: "Vulnerable Servers - OpenCart"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> inurl:/opencart/ "shopping cart"'
+
+  - heading: "Vulnerable Servers - Rsyncd"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"rsync daemon"'
+
+  - heading: "Vulnerable Servers - Microsoft Exchange"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Outlook Web App"'
+
+  - heading: "Vulnerable Servers - Gallery"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "gallery"'
+
+  - heading: "Vulnerable Servers - Meeting"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "meeting"'
+
+  - heading: "Vulnerable Servers - Cloud"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "cloud"'
+
+  - heading: "Vulnerable Servers - Control Panel"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "control panel"'
+
+  - heading: "Vulnerable Servers - Hosted Files"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "hosted files"'
+
+  - heading: "Vulnerable Servers - Remote Desktop"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"Remote Desktop Web Client"'
+
+  - heading: "Vulnerable Servers - Dashboard"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "dashboard"'
+
+  - heading: "Vulnerable Servers - MongoDB"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "mongodb"'
+
+  - heading: "Vulnerable Servers - Elasticsearch"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "elasticsearch"'
+  - heading: "Vulnerable Servers - RabbitMQ"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "rabbitmq"'
+
+  - heading: "Vulnerable Servers - Jenkins"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "jenkins"'
+
+  - heading: "Vulnerable Servers - Redmine"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "redmine"'
+
+  - heading: "Vulnerable Servers - SonarQube"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "sonarqube"'
+
+  - heading: "Vulnerable Servers - Tomcat"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "tomcat"'
+
+  - heading: "Vulnerable Servers - Bugzilla"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "bugzilla"'
+
+  - heading: "Vulnerable Servers - TestLink"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "testlink"'
+
+  - heading: "Vulnerable Servers - Zabbix"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "zabbix"'
+
+  - heading: "Vulnerable Servers - XAMPP"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "xampp"'
+
+  - heading: "Vulnerable Servers - Plex"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "plex"'
+
+  - heading: "Vulnerable Servers - vBulletin"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "vbulletin"'
+
+  - heading: "Vulnerable Servers - phpMyAdmin"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "phpmyadmin"'
+
+  - heading: "Vulnerable Servers - Oracle APEX"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "apex"'
+
+  - heading: "Vulnerable Servers - Oracle E-Business Suite"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "e-business suite"'
+
+  - heading: "Vulnerable Servers - Oracle WebLogic"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "weblogic"'
+
+  - heading: "Vulnerable Servers - Citrix"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "citrix"'
+
+  - heading: "Vulnerable Servers - OpenStack"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "openstack"'
+
+  - heading: "Vulnerable Servers - VMware vSphere"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "vsphere"'
+
+  - heading: "Vulnerable Servers - Jenkins Builds"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "builds"'
+
+  - heading: "Vulnerable Servers - Jenkins Artifacts"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "artifacts"'
+
+  - heading: "Vulnerable Servers - Jenkins Workspaces"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "workspaces"'
+
+  - heading: "Vulnerable Servers - Jenkins Jobs"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "jobs"'
+
+  - heading: "Vulnerable Servers - Jenkins Nodes"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "nodes"'
+
+  - heading: "Vulnerable Servers - Jenkins Scripts"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "scripts"'
+
+  - heading: "Vulnerable Servers - Jenkins Users"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "users"'
+
+  - heading: "Vulnerable Servers - Jenkins Plugins"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "plugins"'
+
+  - heading: "Vulnerable Servers - Jenkins Logs"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "logs"'
+
+  - heading: "Vulnerable Servers - Jenkins Configurations"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "configurations"'
+
+  - heading: "Vulnerable Servers - Jenkins System"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "system"'
+
+  - heading: "Vulnerable Servers - Elasticsearch"
+    category: "Vulnerable Servers"
+    dork: 'site:<domain> intitle:"index of" "elasticsearch"'
+    
+  - heading: "Footholds - Joomla Index"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "Joomla!" site:<domain>'
+
+  - heading: "Footholds - WordPress"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "WordPress" site:<domain>'
+
+  - heading: "Footholds - Drupal"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "Drupal" site:<domain>'
+
+  - heading: "Footholds - MySQL"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "MySQL" site:<domain>'
+
+  - heading: "Footholds - PHPMyAdmin"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "phpMyAdmin" site:<domain>'
+
+  - heading: "Footholds - Admin Login"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "admin login" site:<domain>'
+
+  - heading: "Footholds - Webmin"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "webmin" site:<domain>'
+
+  - heading: "Footholds - Plesk"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "Plesk" site:<domain>'
+
+  - heading: "Footholds - cPanel"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "cPanel" site:<domain>'
+
+  - heading: "Footholds - Server Status"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "server status" site:<domain>'
+
+  - heading: "Footholds - Web Server Detection"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "web server detection" site:<domain>'
+
+  - heading: "Footholds - CMS Detection"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "cms detection" site:<domain>'
+
+  - heading: "Footholds - Port Scan"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "port scan" site:<domain>'
+
+  - heading: "Footholds - Vuln Scan"
+    category: "Footholds"
+    dork: 'intitle:"Index of" "vulnerability scan" site:<domain>'
+
+  - heading: "Sensitive Directories - Admin Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "admin" site:<domain>'
+
+  - heading: "Sensitive Directories - Config Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "config" site:<domain>'
+
+  - heading: "Sensitive Directories - Backup Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "backup" site:<domain>'
+
+  - heading: "Sensitive Directories - Data Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "data" site:<domain>'
+
+  - heading: "Sensitive Directories - Logs Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "logs" site:<domain>'
+
+  - heading: "Sensitive Directories - Database Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "database" site:<domain>'
+
+  - heading: "Sensitive Directories - Uploads Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "uploads" site:<domain>'
+
+  - heading: "Sensitive Directories - Downloads Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "downloads" site:<domain>'
+
+  - heading: "Sensitive Directories - Public Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "public" site:<domain>'
+
+  - heading: "Sensitive Directories - Private Directory"
+    category: "Sensitive Directories"
+    dork: 'intitle:"Index of" "private" site:<domain>'
+
+  - heading: "Web Server Detection - Apache Status"
+    category: "Web Server Detection"
+    dork: 'intitle:"Apache Status" site:<domain>'
+
+  - heading: "Web Server Detection - Nginx Status"
+    category: "Web Server Detection"
+    dork: 'intitle:"Nginx Status" site:<domain>'
+
+  - heading: "Web Server Detection - IIS Status"
+    category: "Web Server Detection"
+    dork: 'intitle:"IIS Status" site:<domain>'
+
+  - heading: "Web Server Detection - Tomcat Status"
+    category: "Web Server Detection"
+    dork: 'intitle:"Tomcat Status" site:<domain>'
+
+  - heading: "Web Server Detection - Lighttpd Status"
+    category: "Web Server Detection"
+    dork: 'intitle:"Lighttpd Status" site:<domain>'
+
+  - heading: "Web Server Detection - Web Server Status"
+    category: "Web Server Detection"
+    dork: 'intitle:"Web Server Status" site:<domain>'
+
+  - heading: "Web Server Detection - Server Information"
+    category: "Web Server Detection"
+    dork: 'intitle:"Server Information" site:<domain>'
+
+  - heading: "Web Server Detection - Server Stats"
+    category: "Web Server Detection"
+    dork: 'intitle:"Server Stats" site:<domain>'
+
+  - heading: "Web Server Detection - HTTP Headers"
+    category: "Web Server Detection"
+    dork: 'intitle:"HTTP Headers" site:<domain>'
+
+  - heading: "Web Server Detection - Server Details"
+    category: "Web Server Detection"
+    dork: 'intitle:"Server Details" site:<domain>'
+
+  - heading: "Web Server Detection - Server Overview"
+    category: "Web Server Detection"
+    dork: 'intitle:"Server Overview" site:<domain>'
+
+  - heading: "Web Server Detection - Server Configuration"
+    category: "Web Server Detection"
+    dork: 'intitle:"Server Configuration" site:<domain>'
+
+  - heading: "Vulnerable Files - Site Backup"
+    category: "Vulnerable Files"
+    dork: 'inurl:backup | inurl:bak site:<domain>'
+
+  - heading: "Vulnerable Files - Configuration Files"
+    category: "Vulnerable Files"
+    dork: 'inurl:config | inurl:conf | inurl:cnf site:<domain>'
+
+  - heading: "Vulnerable Files - Database Dumps"
+    category: "Vulnerable Files"
+    dork: 'inurl:dump | inurl:sql | inurl:db site:<domain>'
+
+  - heading: "Vulnerable Files - Log Files"
+    category: "Vulnerable Files"
+    dork: 'inurl:log | inurl:logs site:<domain>'
+
+  - heading: "Vulnerable Files - Git Repositories"
+    category: "Vulnerable Files"
+    dork: 'inurl:git | inurl:repo site:<domain>'
+
+  - heading: "Vulnerable Files - SVN Repositories"
+    category: "Vulnerable Files"
+    dork: 'inurl:svn | inurl:repo site:<domain>'
+
+  - heading: "Vulnerable Files - SSH Keys"
+    category: "Vulnerable Files"
+    dork: 'inurl:ssh | inurl:id_rsa | inurl:id_dsa site:<domain>'
+
+  - heading: "Vulnerable Files - Environment Variables"
+    category: "Vulnerable Files"
+    dork: 'inurl:env | inurl:dotenv site:<domain>'
+
+  - heading: "Vulnerable Files - API Keys"
+    category: "Vulnerable Files"
+    dork: 'inurl:api | inurl:key | inurl:secret site:<domain>'
+
+  - heading: "Vulnerable Files - Passwords"
+    category: "Vulnerable Files"
+    dork: 'inurl:password | inurl:passwd site:<domain>'
+
+  - heading: "Vulnerable Files - Sensitive Data"
+    category: "Vulnerable Files"
+    dork: 'inurl:sensitive | inurl:private site:<domain>'
+
+  - heading: "Vulnerable Files - Documents"
+    category: "Vulnerable Files"
+    dork: 'inurl:doc | inurl:docx | inurl:pdf site:<domain>'
+
+  - heading: "Vulnerable Files - Spreadsheets"
+    category: "Vulnerable Files"
+    dork: 'inurl:xls | inurl:xlsx site:<domain>'
+
+  - heading: "Vulnerable Files - Presentations"
+    category: "Vulnerable Files"
+    dork: 'inurl:ppt | inurl:pptx site:<domain>'
+
+  - heading: "Vulnerable Files - Archives"
+    category: "Vulnerable Files"
+    dork: 'inurl:zip | inurl:rar | inurl:tar site:<domain>'
