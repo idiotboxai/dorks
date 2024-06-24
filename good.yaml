@@ -1054,305 +1054,305 @@ dorks:
     dork: 'intitle:"Index of /confidential"'
 
   - heading: "Powered by Virtual Airlines Manager [v2.6.2]"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intext:"Powered by Virtual Airlines Manager [v2.6.2]"'
 
   - heading: "index.php?page=news.php"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"index.php?page=news.php"'
 
   - heading: "PHP Projectworlds 1.0"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "PHP Projectworlds 1.0"'
 
   - heading: "quicklinks.aspx"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:quicklinks.aspx'
 
   - heading: "/wp-content/plugins/wpdiscuz/"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wpdiscuz/'
 
   - heading: "/wp-content/plugins/Ultimate-member"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:wp-content/plugins/Ultimate-member'
 
   - heading: "/wp-content/plugins/123ContactForm"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"/wp-content/plugins/123ContactForm"'
 
   - heading: "/wp-content/plugins/1-flash-gallery"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:wp-content/plugins/1-flash-gallery'
 
   - heading: "/wp-content/plugins/wp-super-edit/superedit/ or /wp-content/plugins/wp-super-edit/superedit/tinymce_plugins/mse/fckeditor/editor/filemanager/upload/"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"wp-content/plugins/wp-super-edit/superedit/" OR inurl:"wp-content/plugins/wp-super-edit/superedit/tinymce_plugins/mse/fckeditor/editor/filemanager/upload/"'
 
   - heading: "citsmart.local"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "citsmart.local"'
 
   - heading: "telerik.web.ui.webresource.axd?type=rau or /lib/editor/atto/plugins/managefiles/ or calendar/view.php?view=month"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"telerik.web.ui.webresource.axd?type=rau" OR inurl:"/lib/editor/atto/plugins/managefiles/" OR inurl:"calendar/view.php?view=month"'
 
   - heading: "/ics?tool=search"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/ics?tool=search'
 
   - heading: "/calendar/calendar_form.php"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/calendar/calendar_form.php'
 
   - heading: "Powered By Best Support System"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "Powered By Best Support System"'
 
   - heading: "/wp-content/plugins/super-forms/"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"/wp-content/plugins/super-forms/"'
 
   - heading: "uno.php"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:uno.php'
 
   - heading: "/console/login/LoginForm.jsp"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"/console/login/LoginForm.jsp"'
 
   - heading: "machform inurl:view.php"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "machform" inurl:"view.php"'
 
   - heading: "Incom CMS 2.0"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intext:"Incom CMS 2.0"'
 
   - heading: "/wp-content/themes/altair/"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/themes/altair/'
 
   - heading: "/cgi-bin/manlist?section"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/cgi-bin/manlist?section'
 
   - heading: "/pro_users/login"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/pro_users/login'
 
   - heading: "Powered by vBulletin(R) Version 5.6.3"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "Powered by vBulletin(R) Version 5.6.3"'
 
   - heading: "Please Login Use FTM Push"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intitle:"Please Login" "Use FTM Push"'
 
   - heading: "opac_css"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:opac_css'
 
   - heading: "Powered by Pro Chat Rooms"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intitle:"Powered by Pro Chat Rooms"'
 
   - heading: "/woocommerce-exporter"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"/woocommerce-exporter"'
 
   - heading: "Server: Mida eFramework"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "Server: Mida eFramework"'
 
   - heading: "Sphider Admin Login"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intitle:"Sphider Admin Login"'
 
   - heading: "/wp-content/plugins/wp-file-manager/readme.txt"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wp-file-manager/readme.txt'
 
   - heading: "Published with Textpattern CMS"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intext:"Published with Textpattern CMS"'
 
   - heading: "Powered by Piwigo"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intext:"Powered by Piwigo"'
 
   - heading: "Powered by Typesetter"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intext:"Powered by Typesetter"'
 
   - heading: "/images/lists?cid=13"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/images/lists?cid=13'
 
   - heading: "device ext:rsp"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:device ext:rsp'
 
   - heading: "/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php - Wordpress File Manager"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php" -"Wordpress File Manager"'
 
   - heading: "login.rsp"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:login.rsp'
 
   - heading: "com_gmapfp"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:"com_gmapfp"'
 
   - heading: "/wp-content/plugins/easy-media-gallery-pro"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/easy-media-gallery-pro'
 
   - heading: "/vam/index_vam_op.php"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/vam/index_vam_op.php'
 
   - heading: "/wp-content/plugins/updraftplus"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/updraftplus'
 
   - heading: "/wp-content/plugins/my-calendar"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/my-calendar'
 
   - heading: "Index of : wp-content/plugins/wpmudev-updates/"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> "Index of : wp-content/plugins/wpmudev-updates/"'
 
   - heading: "/wp-content/plugins/redirection"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/redirection'
 
   - heading: "ePMP 1000 Log In -site:*.com -site:com.*"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> intitle:ePMP 1000 intext:"Log In" -site:*.com -site:com.*'
 
   - heading: "/wp-content/plugins/sfwd-lms"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/sfwd-lms'
 
   - heading: "/wp-content/plugins/arforms"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/arforms'
 
   - heading: "/wp-content/plugins/iwp-client"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/iwp-client'
 
   - heading: "/wp-content/plugins/safe-svg"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/safe-svg'
 
   - heading: "/wp-content/plugins/email-subscribers"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/email-subscribers'
 
   - heading: "/wp-content/plugins/wpjobboard"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wpjobboard'
 
   - heading: "/wp-content/plugins/async-javascript"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/async-javascript'
 
   - heading: "/wp-content/plugins/lifterlms"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/lifterlms'
 
   - heading: "/wp-content/plugins/all-in-one-wp-migration"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/all-in-one-wp-migration'
 
   - heading: "/wp-content/plugins/idx-broker-platinum"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/idx-broker-platinum'
 
   - heading: "/wp-content/plugins/wd-google-maps"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wd-google-maps'
 
   - heading: "/wp-content/plugins/sendpress"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/sendpress'
 
   - heading: "/wp-content/plugins/angwp"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/angwp'
 
   - heading: "wp-content/themes/injob"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> allintext:"wp-content/themes/injob"'
 
   - heading: "/wp-content/plugins/knight-lab-timelinejs"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/knight-lab-timelinejs'
 
   - heading: "/wp-content/plugins/gravityforms"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/gravityforms'
 
   - heading: "/wp-content/plugins/wise-chat"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wise-chat'
 
   - heading: "/wp-content/themes/corona"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/themes/corona'
 
   - heading: "/wp-content/themes/realestate-7"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/themes/realestate-7'
 
   - heading: "/wp-content/plugins/kingcomposer"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/kingcomposer'
 
   - heading: "/wp-content/plugins/wp-live-chat-support"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wp-live-chat-support'
 
   - heading: "/wp-content/plugins/newsletter"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/newsletter'
 
   - heading: "/wp-content/plugins/form-maker"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/form-maker'
 
   - heading: "/wp-content/themes/sparky"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/themes/sparky'
 
   - heading: "/wp-content/plugins/acf-to-rest-api"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> allintext:"wp-content/plugins/acf-to-rest-api"'
 
   - heading: "/wp-content/plugins/payment-form-for-paypal-pro"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/payment-form-for-paypal-pro'
 
   - heading: "/wp-content/plugins/wpforms-lite"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wpforms-lite'
 
   - heading: "/wp-content/themes/careerup"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/themes/careerup'
 
   - heading: "/wp-content/plugins/wp-jobsearch"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/wp-jobsearch'
 
   - heading: "/wp-content/themes/careerfy"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/themes/careerfy'
 
   - heading: "/wp-content/plugins/security-malware-firewall"
-    category: "Advisories and Vulnerabilities"
+    category: "Vulnerabilities"
     dork: 'site:<domain> inurl:/wp-content/plugins/security-malware-firewall'
