@@ -368,7 +368,7 @@ dorks:
   - heading: "Vulnerable Servers - Elasticsearch"
     category: "Vulnerable Servers"
     dork: 'site:<domain> intitle:"index of" "elasticsearch"'
-    
+
   - heading: "Footholds - Joomla Index"
     category: "Footholds"
     dork: 'intitle:"Index of" "Joomla!" site:<domain>'
@@ -572,3 +572,787 @@ dorks:
   - heading: "Vulnerable Files - Archives"
     category: "Vulnerable Files"
     dork: 'inurl:zip | inurl:rar | inurl:tar site:<domain>'
+
+  - heading: "Lucee Error (expression)"
+    category: "Error Messages"
+    dork: 'site:<domain> intext:"Lucee" "Error (expression)" -site:lucee.org'
+
+  - heading: "Error Occurred While Processing Request"
+    category: "Error Messages"
+    dork: 'site:<domain> intext:"Error Occurred While Processing Request"'
+
+  - heading: "index of stacktrace.log"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"index of" "stacktrace.log"'
+
+  - heading: "index of my-errors.log OR my-errors.logs"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"index of" "my-errors.log" OR "my-errors.logs"'
+
+  - heading: "index of errors.log"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"index of" errors.log'
+
+  - heading: "Warning: mysql_num_rows() inurl:index.php?id="
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:"index.php?id=" intext:"Warning: mysql_num_rows()"'
+
+  - heading: "/WebResource.axd?d= and intext:Error"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:"/WebResource.axd?d=" AND intext:Error'
+
+  - heading: "/storage/logs/laravel.log and intext: local.ERROR | NULL.ERROR | EMERGENCY:"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:("/storage/logs/laravel.log") AND intext:("local.ERROR" | "NULL.ERROR" | "EMERGENCY:")'
+
+  - heading: "TCPDFtcpdf.php on line 17778"
+    category: "Error Messages"
+    dork: 'site:<domain> intext:"TCPDFtcpdf.php on line 17778" -site:stackoverflow.com -site:wordpress.org -site:github.com'
+
+  - heading: "sf_app + frontend sf_app_base_cache_dir:"
+    category: "Error Messages"
+    dork: 'site:<domain> intext:"sf_app" + "frontend sf_app_base_cache_dir:"'
+
+  - heading: "elmah.axd ext:axd"
+    category: "Error Messages"
+    dork: 'site:<domain> elmah.axd ext:axd'
+
+  - heading: "Error log for /LM/"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"Error log for /LM/"'
+
+  - heading: "/errors/report.php intext: There has been an error processing your request"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:"/errors/report.php" intext:"There has been an error processing your request"'
+
+  - heading: "define(WP_ALLOW_REPAIR,true); in site:*/wp-admin/maint/repair.php"
+    category: "Error Messages"
+    dork: 'site:<domain> site:*/wp-admin/maint/repair.php intext:"define(WP_ALLOW_REPAIR,true);"'
+
+  - heading: "/wp-includes/Requests/php_errorlog"
+    category: "Error Messages"
+    dork: 'site:<domain> site:*/wp-includes/Requests/php_errorlog'
+
+  - heading: "/cgi-sys/defaultwebpage.cgi intext: SORRY!"
+    category: "Error Messages"
+    dork: 'site:<domain> site:*/cgi-sys/defaultwebpage.cgi intext:"SORRY!"'
+
+  - heading: "/cgi-sys/suspendedpage.cgi intitle: Account Suspended"
+    category: "Error Messages"
+    dork: 'site:<domain> site:*/cgi-sys/suspendedpage.cgi intitle:"Account Suspended"'
+
+  - heading: "/Shibboleth.sso/SAML2/POST"
+    category: "Error Messages"
+    dork: 'site:<domain> site:*/Shibboleth.sso/SAML2/POST'
+
+  - heading: "/404/404.html intitle: 404"
+    category: "Error Messages"
+    dork: 'site:<domain> site:*/404/404.html intitle:"404"'
+
+  - heading: "filetype:php Notice: Undefined variable: data in -forum"
+    category: "Error Messages"
+    dork: 'site:<domain> filetype:php "Notice: Undefined variable: data in" -forum'
+
+  - heading: "site:com inurl:jboss filetype:log -github.com"
+    category: "Error Messages"
+    dork: 'site:<domain> site:com inurl:jboss filetype:log -github.com'
+
+  - heading: "inurl:/php-errors.log filetype:log"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/php-errors.log filetype:log'
+
+  - heading: "dispatch=debugger."
+    category: "Error Messages"
+    dork: 'site:<domain> dispatch=debugger.'
+
+  - heading: "syd_apply.cfm"
+    category: "Error Messages"
+    dork: 'site:<domain> syd_apply.cfm'
+
+  - heading: "inurl:?wp-commentsrss2.php -git"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:?wp-commentsrss2.php -git'
+
+  - heading: "CakeRoutingException -site:github.com -site:stackoverflow.com -site:cakephp.org"
+    category: "Error Messages"
+    dork: 'site:<domain> CakeRoutingException -site:github.com -site:stackoverflow.com -site:cakephp.org'
+
+  - heading: "inurl:.php?id= You have an error in your SQL syntax"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:".php?id=" "You have an error in your SQL syntax"'
+
+  - heading: "CGIWrap Error"
+    category: "Error Messages"
+    dork: 'site:<domain> CGIWrap Error'
+
+  - heading: "--- WebView Livescope Http Server Error --- -git"
+    category: "Error Messages"
+    dork: 'site:<domain> "--- WebView Livescope Http Server Error ---" -git'
+
+  - heading: "Below is a rendering of the page up to the first error. ext:xml"
+    category: "Error Messages"
+    dork: 'site:<domain> "Below is a rendering of the page up to the first error." ext:xml'
+
+  - heading: "index of driver.php?id="
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:index of driver.php?id='
+
+  - heading: "expects parameter 1 to be resource, boolean given filetype:php"
+    category: "Error Messages"
+    dork: 'site:<domain> intext:"expects parameter 1 to be resource, boolean given" filetype:php'
+
+  - heading: "Struts Problem Report intext: development mode is enabled."
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"Struts Problem Report" intext:"development mode is enabled."'
+
+  - heading: "id= and intext: MySQL Error: 1064 Session halted."
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:"id=" & intext:"MySQL Error: 1064" & "Session halted."'
+
+  - heading: "DSM Terminator [ ABORT ] | inurl:./com.sap.portal.dsm.Terminator"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"DSM Terminator [ ABORT ]" | inurl:"./com.sap.portal.dsm.Terminator"'
+
+  - heading: "smpwservices.fcc | lm_private/CkeSetter.aspx"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/smpwservices.fcc | "/lm_private/CkeSetter.aspx"'
+
+  - heading: "siteminderagent/ Error 404: java.io.FileNotFoundException: SRVE0190E: File not found: /siteminderagent/"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/siteminderagent/ | app:"Error 404: java.io.FileNotFoundException: SRVE0190E: File not found: /siteminderagent/"'
+
+  - heading: "console-selfservice/common/scripts/calendar/ipopeng.htm"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/console-selfservice/common/scripts/calendar/ipopeng.htm'
+
+  - heading: "nesp/app"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/nesp/app'
+
+  - heading: "SAML2/SOAP/ | SAML2/POST"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/SAML2/SOAP/ | inurl:/SAML2/POST'
+
+  - heading: "uniquesig0/ or uniquesig0/InternalSite/"
+    category: "Error Messages"
+    dork: 'site:<domain> inurl:/uniquesig0/ or inurl:/uniquesig0/InternalSite/'
+
+  - heading: "index.php?id= intext: mysql_fetch_array"
+    category: "Error Messages"
+    dork: 'site:<domain> index.php?id= intext:"mysql_fetch_array"'
+
+  - heading: "Content Server Error IdcService=DOC_INFO"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:Content Server Error IdcService=DOC_INFO'
+
+  - heading: "Whoops! There was an error."
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"Whoops! There was an error."'
+
+  - heading: "Error-javax.el.ELException+error+xhtml"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:Error-javax.el.ELException+error+xhtml'
+
+  - heading: "Error Page pageWrapper.jsp?"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:Error Page pageWrapper.jsp?'
+
+  - heading: "Unexpected Problem Occurred! ext:aspx"
+    category: "Error Messages"
+    dork: 'site:<domain> intext:"Unexpected Problem Occurred!" ext:aspx'
+
+  - heading: "Access denied for intitle:Shopping cart"
+    category: "Error Messages"
+    dork: 'site:<domain> intitle:"Access denied for intitle:Shopping cart"'
+
+  - heading: "GlobalProtect Portal"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"GlobalProtect Portal"'
+
+  - heading: "UAT Login Pages"
+    category: "Files Containing Juicy Info"
+    dork: 'site:uat.* * inurl:login'
+
+  - heading: "OpenLDAP Configuration"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:index of /etc/openldap'
+
+  - heading: "PHP Setting Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" setting.php'
+
+  - heading: "dhcpd.conf Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"dhcpd.conf" "index of"'
+
+  - heading: "PHP Fatal Error Logs"
+    category: "Files Containing Juicy Info"
+    dork: '"PHP Fatal error:" ext:log OR ext:txt'
+
+  - heading: "Preprod Login Pages"
+    category: "Files Containing Juicy Info"
+    dork: 'site:preprod.* * inurl:login'
+
+  - heading: "Swagger-PHP Configuration"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"/zircote/swagger-php"'
+
+  - heading: "AWS S3 XML Files"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:/s3.amazonaws.com ext:xml intext:index of -site:github.com'
+
+  - heading: "Kubernetes YAML Files"
+    category: "Files Containing Juicy Info"
+    dork: '"rbac.yaml" | "role.yaml" | "rolebinding.yaml" | "*-rbac.yaml" intitle:"index of"'
+
+  - heading: "Network Configuration Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:Index of "/etc/network" | "/etc/cni/net.d"'
+
+  - heading: "Config Files"
+    category: "Files Containing Juicy Info"
+    dork: '"configmap.yaml" | "config.yaml" | "*-config.yaml" intitle:"index of"'
+
+  - heading: "Mastercard in Pastebin"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:pastebin intitle:mastercard'
+
+  - heading: "Invoice Files"
+    category: "Files Containing Juicy Info"
+    dork: 'site:com inurl:invoice'
+
+  - heading: "WordPress JSON Embed"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:"/wp-json/oembed/1.0/embed?url="'
+
+  - heading: "Confidential Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"Index of /confidential"'
+
+  - heading: "Web Auditing Logs"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"index of" web'
+
+  - heading: "Encryption Text Files"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:* "encryption.txt"'
+
+  - heading: "CGI Scripts"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" cgi.pl'
+
+  - heading: "Environment Configuration"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" env.cgi'
+
+  - heading: "Java Code with executeUpdate"
+    category: "Files Containing Juicy Info"
+    dork: 'ext:java intext:"executeUpdate"'
+
+  - heading: "Upstream Project Logs"
+    category: "Files Containing Juicy Info"
+    dork: '"Started by upstream project" ext:txt'
+
+  - heading: "SSH Host Keys in Registry"
+    category: "Files Containing Juicy Info"
+    dork: 'filetype:reg reg HKEY_CURRENT_USER SSHHOSTKEYS'
+
+  - heading: "JSON Formatter and AWS Secrets"
+    category: "Files Containing Juicy Info"
+    dork: '(site:jsonformatter.org | site:codebeautify.org) & (intext:aws | intext:bucket | intext:password | intext:secret | intext:username)'
+
+  - heading: "URLs with ?url=http"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:"?url=http"'
+
+  - heading: "PHP Files with User and Account"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"user" filetype:php intext:"account" inurl:/admin'
+
+  - heading: "Fleet Management Portal"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"Fleet Management Portal"'
+
+  - heading: "Docker Indexes on .com"
+    category: "Files Containing Juicy Info"
+    dork: 'site:.com "index of docker"'
+
+  - heading: "Google Hacking Database"
+    category: "Files Containing Juicy Info"
+    dork: 'Google Dork'
+
+  - heading: "Google Dorks"
+    category: "Files Containing Juicy Info"
+    dork: 'Google dorks'
+
+  - heading: "PHP Files with php in title"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"Index of" intext:"php" site:*.com.*'
+
+  - heading: "User Files Indexed in Title"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"userfiles" intitle:"Index Of" site:*.com.*'
+
+  - heading: "Submissions to GHDB -1"
+    category: "Files Containing Juicy Info"
+    dork: 'GHDB submissions -1'
+
+  - heading: "PHP Files with config in title"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"Index of" intext:"config" site:*.com.*'
+
+  - heading: "Web Applications Indexed in Title"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"index of" app'
+
+  - heading: "WordPress Configuration Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"phpinfo" site:*.com.* intext:"HTTP_HOST"'
+
+  - heading: "SQL Files on .edu Sites"
+    category: "Files Containing Juicy Info"
+    dork: 'site:id filetype:sql'
+
+  - heading: "Text Files with Administrator Accounts"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"administrator" filetype:txt intext:"account" inurl:/admin , intext:"administrator" filetype:txt intext:"account" allinurl:'
+
+  - heading: "Python Database Script"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:index of db.py'
+
+  - heading: "Axis Management Portal"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:/HappyAxis.jsp'
+
+  - heading: "Store Directory with Index"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"index of"store'
+
+  - heading: "Network Packet Capture Files"
+    category: "Files Containing Juicy Info"
+    dork: 'site:*.*.* intitle:"index of" *.pcapng'
+
+  - heading: "PHP Error Logs on .com Sites"
+    category: "Files Containing Juicy Info"
+    dork: 'site:*.* inurl:php_error.log - Sensitive information disclosure'
+
+  - heading: "Server Configuration Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"index of" server.conf'
+
+  - heading: "WordPress Configuration Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" "configuration.php"'
+
+  - heading: "TYPO3 Admin Panel"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:typo3/index.php'
+
+  - heading: "Robotics Research on .edu Sites"
+    category: "Files Containing Juicy Info"
+    dork: 'site:.edu intext:"robotics" inurl:/research'
+
+  - heading: "Google Dork Submission"
+    category: "Files Containing Juicy Info"
+    dork: 'Submission of New Google Dork'
+
+  - heading: "Microsoft App Center Organizations"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:."install.appcenter.ms/orgs/"'
+
+  - heading: "Template Files on .edu Sites"
+    category: "Files Containing Juicy Info"
+    dork: 'site:*.edu.* filetype:template'
+
+  - heading: "Template Files on .ac Sites"
+    category: "Files Containing Juicy Info"
+    dork: 'site:*.ac.* filetype:template'
+
+  - heading: "Log Files with Account Numbers"
+    category: "Files Containing Juicy Info"
+    dork: 'filetype:log intext:"Account Number"'
+
+  - heading: "Pins in Files on .com"
+    category: "Files Containing Juicy Info"
+    dork: 'site:.com inurl:db-intext:"pin"'
+
+  - heading: "Login Pages Indexed in Title"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" login'
+
+  - heading: "Google Dork Database"
+    category: "Files Containing Juicy Info"
+    dork: 'Google Dork'
+
+  - heading: "GHDB Submissions"
+    category: "Files Containing Juicy Info"
+    dork: 'GHDB submissions'
+
+  - heading: "Error Files on .com"
+    category: "Files Containing Juicy Info"
+    dork: 'site:.com inurl:admin-intext:"error"'
+
+  - heading: "Email in Error Logs"
+    category: "Files Containing Juicy Info"
+    dork: 'filetype:log intext:"email"'
+
+  - heading: "Database Submissions"
+    category: "Files Containing Juicy Info"
+    dork: 'filetype:db inurl:php intext:"database"'
+
+  - heading: "Admin Accounts in Error Files"
+    category: "Files Containing Juicy Info"
+    dork: 'filetype:txt intext:"administrator" inurl:/admin'
+
+  - heading: "Exchange Server Information"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:index of /exchange'
+
+  - heading: "Websites Indexed in Title"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" website'
+
+  - heading: "Microsoft Access Files"
+    category: "Files Containing Juicy Info"
+    dork: 'filetype:accdb intext:"access 2010"'
+
+  - heading: "Google Dorks Submission"
+    category: "Files Containing Juicy Info"
+    dork: 'Google Dorks'
+
+  - heading: "GHDB Submission"
+    category: "Files Containing Juicy Info"
+    dork: 'GHDB submission'
+
+  - heading: "Error Logs with PHP Errors"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"index of" error -"import error" -"easy error" -"any error" -"advanced error" -"twitter error"'
+
+  - heading: "Template Files on .edu Sites"
+    category: "Files Containing Juicy Info"
+    dork: 'site:.edu.* filetype:template'
+
+  - heading: "Web Application Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intext:"index of" app'
+
+  - heading: "Google Dork with MasterCard"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:pastebin intitle:mastercard'
+
+  - heading: "Invoice Files"
+    category: "Files Containing Juicy Info"
+    dork: 'site:com inurl:invoice'
+
+  - heading: "WordPress JSON Embed"
+    category: "Files Containing Juicy Info"
+    dork: 'inurl:"/wp-json/oembed/1.0/embed?url="'
+
+  - heading: "Confidential Files"
+    category: "Files Containing Juicy Info"
+    dork: 'intitle:"Index of /confidential"'
+
+  - heading: "Powered by Virtual Airlines Manager [v2.6.2]"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intext:"Powered by Virtual Airlines Manager [v2.6.2]"'
+
+  - heading: "index.php?page=news.php"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"index.php?page=news.php"'
+
+  - heading: "PHP Projectworlds 1.0"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "PHP Projectworlds 1.0"'
+
+  - heading: "quicklinks.aspx"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:quicklinks.aspx'
+
+  - heading: "/wp-content/plugins/wpdiscuz/"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wpdiscuz/'
+
+  - heading: "/wp-content/plugins/Ultimate-member"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:wp-content/plugins/Ultimate-member'
+
+  - heading: "/wp-content/plugins/123ContactForm"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"/wp-content/plugins/123ContactForm"'
+
+  - heading: "/wp-content/plugins/1-flash-gallery"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:wp-content/plugins/1-flash-gallery'
+
+  - heading: "/wp-content/plugins/wp-super-edit/superedit/ or /wp-content/plugins/wp-super-edit/superedit/tinymce_plugins/mse/fckeditor/editor/filemanager/upload/"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"wp-content/plugins/wp-super-edit/superedit/" OR inurl:"wp-content/plugins/wp-super-edit/superedit/tinymce_plugins/mse/fckeditor/editor/filemanager/upload/"'
+
+  - heading: "citsmart.local"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "citsmart.local"'
+
+  - heading: "telerik.web.ui.webresource.axd?type=rau or /lib/editor/atto/plugins/managefiles/ or calendar/view.php?view=month"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"telerik.web.ui.webresource.axd?type=rau" OR inurl:"/lib/editor/atto/plugins/managefiles/" OR inurl:"calendar/view.php?view=month"'
+
+  - heading: "/ics?tool=search"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/ics?tool=search'
+
+  - heading: "/calendar/calendar_form.php"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/calendar/calendar_form.php'
+
+  - heading: "Powered By Best Support System"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "Powered By Best Support System"'
+
+  - heading: "/wp-content/plugins/super-forms/"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"/wp-content/plugins/super-forms/"'
+
+  - heading: "uno.php"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:uno.php'
+
+  - heading: "/console/login/LoginForm.jsp"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"/console/login/LoginForm.jsp"'
+
+  - heading: "machform inurl:view.php"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "machform" inurl:"view.php"'
+
+  - heading: "Incom CMS 2.0"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intext:"Incom CMS 2.0"'
+
+  - heading: "/wp-content/themes/altair/"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/themes/altair/'
+
+  - heading: "/cgi-bin/manlist?section"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/cgi-bin/manlist?section'
+
+  - heading: "/pro_users/login"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/pro_users/login'
+
+  - heading: "Powered by vBulletin(R) Version 5.6.3"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "Powered by vBulletin(R) Version 5.6.3"'
+
+  - heading: "Please Login Use FTM Push"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intitle:"Please Login" "Use FTM Push"'
+
+  - heading: "opac_css"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:opac_css'
+
+  - heading: "Powered by Pro Chat Rooms"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intitle:"Powered by Pro Chat Rooms"'
+
+  - heading: "/woocommerce-exporter"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"/woocommerce-exporter"'
+
+  - heading: "Server: Mida eFramework"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "Server: Mida eFramework"'
+
+  - heading: "Sphider Admin Login"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intitle:"Sphider Admin Login"'
+
+  - heading: "/wp-content/plugins/wp-file-manager/readme.txt"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wp-file-manager/readme.txt'
+
+  - heading: "Published with Textpattern CMS"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intext:"Published with Textpattern CMS"'
+
+  - heading: "Powered by Piwigo"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intext:"Powered by Piwigo"'
+
+  - heading: "Powered by Typesetter"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intext:"Powered by Typesetter"'
+
+  - heading: "/images/lists?cid=13"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/images/lists?cid=13'
+
+  - heading: "device ext:rsp"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:device ext:rsp'
+
+  - heading: "/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php - Wordpress File Manager"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php" -"Wordpress File Manager"'
+
+  - heading: "login.rsp"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:login.rsp'
+
+  - heading: "com_gmapfp"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:"com_gmapfp"'
+
+  - heading: "/wp-content/plugins/easy-media-gallery-pro"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/easy-media-gallery-pro'
+
+  - heading: "/vam/index_vam_op.php"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/vam/index_vam_op.php'
+
+  - heading: "/wp-content/plugins/updraftplus"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/updraftplus'
+
+  - heading: "/wp-content/plugins/my-calendar"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/my-calendar'
+
+  - heading: "Index of : wp-content/plugins/wpmudev-updates/"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> "Index of : wp-content/plugins/wpmudev-updates/"'
+
+  - heading: "/wp-content/plugins/redirection"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/redirection'
+
+  - heading: "ePMP 1000 Log In -site:*.com -site:com.*"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> intitle:ePMP 1000 intext:"Log In" -site:*.com -site:com.*'
+
+  - heading: "/wp-content/plugins/sfwd-lms"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/sfwd-lms'
+
+  - heading: "/wp-content/plugins/arforms"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/arforms'
+
+  - heading: "/wp-content/plugins/iwp-client"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/iwp-client'
+
+  - heading: "/wp-content/plugins/safe-svg"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/safe-svg'
+
+  - heading: "/wp-content/plugins/email-subscribers"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/email-subscribers'
+
+  - heading: "/wp-content/plugins/wpjobboard"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wpjobboard'
+
+  - heading: "/wp-content/plugins/async-javascript"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/async-javascript'
+
+  - heading: "/wp-content/plugins/lifterlms"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/lifterlms'
+
+  - heading: "/wp-content/plugins/all-in-one-wp-migration"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/all-in-one-wp-migration'
+
+  - heading: "/wp-content/plugins/idx-broker-platinum"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/idx-broker-platinum'
+
+  - heading: "/wp-content/plugins/wd-google-maps"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wd-google-maps'
+
+  - heading: "/wp-content/plugins/sendpress"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/sendpress'
+
+  - heading: "/wp-content/plugins/angwp"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/angwp'
+
+  - heading: "wp-content/themes/injob"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> allintext:"wp-content/themes/injob"'
+
+  - heading: "/wp-content/plugins/knight-lab-timelinejs"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/knight-lab-timelinejs'
+
+  - heading: "/wp-content/plugins/gravityforms"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/gravityforms'
+
+  - heading: "/wp-content/plugins/wise-chat"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wise-chat'
+
+  - heading: "/wp-content/themes/corona"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/themes/corona'
+
+  - heading: "/wp-content/themes/realestate-7"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/themes/realestate-7'
+
+  - heading: "/wp-content/plugins/kingcomposer"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/kingcomposer'
+
+  - heading: "/wp-content/plugins/wp-live-chat-support"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wp-live-chat-support'
+
+  - heading: "/wp-content/plugins/newsletter"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/newsletter'
+
+  - heading: "/wp-content/plugins/form-maker"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/form-maker'
+
+  - heading: "/wp-content/themes/sparky"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/themes/sparky'
+
+  - heading: "/wp-content/plugins/acf-to-rest-api"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> allintext:"wp-content/plugins/acf-to-rest-api"'
+
+  - heading: "/wp-content/plugins/payment-form-for-paypal-pro"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/payment-form-for-paypal-pro'
+
+  - heading: "/wp-content/plugins/wpforms-lite"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wpforms-lite'
+
+  - heading: "/wp-content/themes/careerup"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/themes/careerup'
+
+  - heading: "/wp-content/plugins/wp-jobsearch"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/wp-jobsearch'
+
+  - heading: "/wp-content/themes/careerfy"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/themes/careerfy'
+
+  - heading: "/wp-content/plugins/security-malware-firewall"
+    category: "Advisories and Vulnerabilities"
+    dork: 'site:<domain> inurl:/wp-content/plugins/security-malware-firewall'
