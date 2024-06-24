@@ -86,7 +86,7 @@ dorks:
     category: "Sensitive Files"
     dork: 'site:atlassian.net "<domain>"'
 
-  - heading: "Zoom Meeting Links"
+  - heading: "Sensitive Files - Zoom Meeting Links"
     category: "Sensitive Files"
     dork: 'site:zoom.us "<domain>"'
 
